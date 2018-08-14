@@ -15,4 +15,11 @@ Route::get('/','MainController@home');
 
 Auth::routes();
 
+Route::resource('products', 'ProductsController');
+
+/*
+	GET/products => index
+*/
+
+
 Route::get('/home', 'HomeController@index')->name('home');
