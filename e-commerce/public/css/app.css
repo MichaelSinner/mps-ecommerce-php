@@ -27,4 +27,15 @@
 	background-color:white;
 }
 
+.white{
+	background-color:white;  
+}
+
+.floating{
+	position:fixed;;
+	bottom: 2em;
+	right: 2em;
+	z-index: 100;
+}
+
 
