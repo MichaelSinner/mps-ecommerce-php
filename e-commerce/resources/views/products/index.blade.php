@@ -16,15 +16,17 @@
 				</tr>
 			</thead>
 			<tbody>
-				<tr>
+				
 				@foreach($products as $product)
+				<tr>
 					<td>{{ $product->id }}</td>
 					<td>{{ $product->title }}</td>
 					<td>{{ $product->description }}</td>
 					<td>{{ $product->pricing }}</td>
 					<td>Acciones</td>
-				@endforeach
 				</tr>
+				@endforeach
+				
 			</tbody>
 		</table>
 	</div>
