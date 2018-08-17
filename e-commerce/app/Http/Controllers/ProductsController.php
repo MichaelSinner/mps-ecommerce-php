@@ -88,7 +88,7 @@ class ProductsController extends Controller
         $product->description = $request->description;
         $product->pricing = $request->pricing;
         if($product->save()){
-            return redirect("\products");
+            return redirect("products");
         }else{
             return view("products.edit",["product"=>$product]);
         } 
@@ -102,6 +102,8 @@ class ProductsController extends Controller
      */
     public function destroy($id)
     {
-        //
+      Product::destroy($id);
+
+      return redirect('/products');
     }
 }

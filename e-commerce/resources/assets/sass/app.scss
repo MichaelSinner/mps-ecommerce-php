@@ -1,7 +1,4 @@
 
-// Fonts
-@import url('https://fonts.googleapis.com/css?family=Nunito');
-
 // Variables
 @import 'variables';
 
@@ -12,5 +9,62 @@
   background-color: #fff;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
 }
+
+.navbar{
+	margin-bottom:0px	
+}
+
+.big-padding{
+	padding:30px;
+}
+
+.blue-grey{
+	background-color:#37474f;
+}
+
+.white-text{
+	color:white;
+}
+
+.red-text{
+	color:rgb(220,50,50); 
+}
+
+.table-main{
+	background-color:white;
+}
+
+.white{
+	background-color:white;  
+}
+
+.floating{
+	position:fixed;
+	bottom: 2em;
+	right: 2em;
+	z-index: 100;
+}
+
+.no-padding{
+	padding: 0px;
+}
+
+.no-margin{
+	margin: 0px;
+}
+
+.inline-block{
+	display: inline-block;
+}
+
+.no-transform{
+	text-transform: none;
+}
+
+
+
+
+
+
 
 
