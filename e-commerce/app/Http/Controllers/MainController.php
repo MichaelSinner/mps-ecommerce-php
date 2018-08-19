@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Http\Requests;
+use App\ShoppingCart;
 
 /**
  * MainController of main view
@@ -10,7 +11,14 @@ use App\Http\Requests;
 class MainController extends Controller
 {
 	public function home(){
-		return view('main.home',["name"=>"Michi"]);
+
+		$shopping_cart = \Session::get('shopping_cart_id');
+
+		$shopping_cart = ShoppingCart::findOrCreatedbySessionID($shopping_cart_id);
+
+		\Session:put("shopping_cart_id", $shopping_cart->id);
+
+		return view('main.home',["shopping_cart"=>$shopping_cart]);
 	}
 }
 

@@ -57,6 +57,15 @@
 
                     <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav ml-auto">
+                        
+                        <a href="" class="nav-link">
+                            <li>
+                                Mi Carrito
+                                <span class="circle-shopping-cart">
+                                    {{$shopping_cart->productsSize()}}
+                                </span>
+                            </li>
+                        </a>
                         <!-- Authentication Links -->
                         @guest
                             <li class="nav-item">
