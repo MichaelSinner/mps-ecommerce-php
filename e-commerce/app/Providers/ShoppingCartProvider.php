@@ -31,6 +31,6 @@ class ShoppingCartProvider extends ServiceProvider
      */
     public function register()
     {
-        //
+        
     }
 }
