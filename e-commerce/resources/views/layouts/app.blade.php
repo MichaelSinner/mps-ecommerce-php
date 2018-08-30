@@ -58,7 +58,7 @@
                     <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav ml-auto">
                         
-                        <a href="" class="nav-link">
+                        <a href="{{url('/Carrito')}}" class="nav-link">
                             <li>
                                 Mi Carrito
                                 <span class="circle-shopping-cart">
