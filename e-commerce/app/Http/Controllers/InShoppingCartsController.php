@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\ShoppingCart;
+use App\InShoppingCart;
 
 class InShoppingCartsController extends Controller
 {
@@ -14,7 +16,20 @@ class InShoppingCartsController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $shopping_cart_id = \Session::get('shopping_cart_id');
+        $shopping_cart = ShoppingCart::findOrCreatedbySessionID($shopping_cart_id);
+
+        $response = InShoppingCart::create([
+            "shopping_cart_id" => $shopping_cart,
+            "product_id" => $request->product_id,
+        ]);
+
+        if($response){
+            return redirect('/carrito');
+        }else{
+            return back();
+        }
+
     }
 
     /**
