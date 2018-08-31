@@ -62,7 +62,7 @@
                             <li>
                                 Mi Carrito
                                 <span class="circle-shopping-cart">
-                                    {{$shopping_cart->productsSize()}}
+                                    
                                 </span>
                             </li>
                         </a>
