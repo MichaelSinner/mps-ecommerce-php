@@ -62,7 +62,7 @@
                             <li>
                                 Mi Carrito
                                 <span class="circle-shopping-cart">
-                                    
+                                    {{$productsCount}}
                                 </span>
                             </li>
                         </a>
