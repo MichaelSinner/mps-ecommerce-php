@@ -24,6 +24,10 @@ class ShoppingCart extends Model
 		return $this->products()->sum("pricing");
 	}
 
+	totalUSD(){
+		$this->total()/3000;
+	}
+
     public static function findOrCreatedbySessionID($shopping_cart_id){
     	if($shopping_cart_id)
 			return ShoppingCart::findBySession($shopping_cart_id);

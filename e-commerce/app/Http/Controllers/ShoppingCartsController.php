@@ -12,6 +12,7 @@ class ShoppingCartsController extends Controller
     	$shopping_cart_id = \Session::get('shopping_cart_id');
 		$shopping_cart = ShoppingCart::findOrCreatedbySessionID($shopping_cart_id);
 		$paypal = new Paypal($shopping_cart);
+		$paypal->generate();
 		return "";
 
 		/*
