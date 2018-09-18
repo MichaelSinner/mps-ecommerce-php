@@ -21,7 +21,16 @@ class Paypal
 	}
 
 	public function generate(){
-		$payment = \PaypalPayment::payment()->setIntent("sale")->setPayer([$this->transaction()])->setRedirectsUrls($this->redirectURLs());
+		$payment = \PaypalPayment::payment()->setIntent("sale")->setPayer([$this->transaction()])->setRedirectUrls($this->redirectURLs());
+		try{
+			$payment->create($this->_apiContext);
+		}catch(\Exception $ex){
+			dd($ex);
+			exit(1);
+		}
+
+		return $payment;
+
 	}
 
 	public function payer(){
@@ -34,7 +43,7 @@ class Paypal
 		return \PaypalPayment::transaction()
 										->setAmount($this->amount())
 										->setItemList($this->items())
-										->setDesciption("Tu compra en PanchitoStore")
+										->setDescription("Tu compra en PanchitoStore")
 										->setInvoiceNumber(uniqid());
 	}
 
@@ -49,12 +58,12 @@ class Paypal
 	}
 
 	public function amount(){
-		return \PaypalPayment::amount()->serCurrency("USD")->setTotal($this->shopping_cart->total());
+		return \PaypalPayment::amount()->setCurrency('USD')->setTotal($this->shopping_cart->total());
 	}
 
-	public function setRedirectsUrls(){
+	public function redirectURLs(){
 		$baseURL = url('url');
-		return \PaypalPayment::redirectURLs()->setReturnUrl("$baseURL/payments/store")->setCancelUrl("$baseURL/carrito");
+		return \PaypalPayment::redirectUrls()->setReturnUrl("$baseURL/payments/store")->setCancelUrl("$baseURL/carrito");
 	}
 
 	

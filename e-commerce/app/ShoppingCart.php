@@ -24,7 +24,7 @@ class ShoppingCart extends Model
 		return $this->products()->sum("pricing");
 	}
 
-	totalUSD(){
+	public function USD(){
 		$this->total()/3000;
 	}
 

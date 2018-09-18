@@ -8,6 +8,6 @@ class Product extends Model
 {
     public function paypalItem(){
 
-    	return \PaypalPayment::item()->setName($product->title)->setDescription($product->description)->setCurrency('USD')->setQuantity(1)->setPrice($this->pricing);
+    	return \PaypalPayment::item()->setName($this->title)->setDescription($this->description)->setCurrency('USD')->setQuantity(1)->setPrice($this->pricing);
     }
 }
